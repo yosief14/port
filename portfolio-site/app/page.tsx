@@ -1,21 +1,27 @@
+"use client"
 import IntroSection from "@/components/about/IntroSection";
 import ToolsSection from "@/components/ToolsSection";
 import ProjectSection from "@/components/projects/ProjectSection";
 import TimelineSection from "@/components/timeline/TimelineSection";
 import Navbar from "@/components/navbar/Navbar";
+import React from "react";
 
 export default function Home() {
-  // TODO add local font to the project
   //TODO: add contact section
-
+  const mainRef = React.useRef(null);
   return (
-    <main className="flex min-h-[80vh]  flex-col items-center justify-center
-    bg-zinc-950 pt-16">
-      <Navbar></Navbar>
+
+    <main className="flex h-[100vh]  flex-col items-center relative
+    bg-[linear-gradient(to_bottom,#020c12,#040910,#06060c,#060408,#040204,#050104,#050104,#060003,#090006,#0b010a,#0c020e,#0c0312)]
+    bg-scroll overflow-y-auto"
+      ref={mainRef}>
+      <Navbar containerRef={mainRef}></Navbar>
+
       <IntroSection></IntroSection>
       <ToolsSection></ToolsSection>
       <ProjectSection></ProjectSection>
       <TimelineSection></TimelineSection>
     </main>
+
   );
 }
