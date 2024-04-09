@@ -31,7 +31,7 @@ export default function ProjectCard(props: ProjectCardProps) {
 
         <div
 
-            className='bg-black flex  px-6 py-2 flex-col gap-6 max-w-[500px] items-center  rounded-2xl border-2 border-[#27272a] rounded-md'>
+            className='bg-black flex  px-6 py-2 flex-col gap-6 max-w-[500px] items-center  rounded-2xl border-2 border-[#27272a] '>
             <div className=" relative w-[480px] h-[300px]">
                 <Image src={props.img} alt={"NO name badge"} fill className='rounded-2xl border-black border-2 object-cover'></Image>
             </div>

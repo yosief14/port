@@ -8,15 +8,15 @@ import React from "react";
 
 export default function Home() {
   //TODO: add contact section
+  //TODO: add fade in for page components
   const mainRef = React.useRef(null);
   return (
 
-    <main className="flex h-[100vh]  flex-col items-center relative
+    <main className="flex h-[100vh] flex-col items-center  justify-content-center
     bg-[linear-gradient(to_bottom,#020c12,#040910,#06060c,#060408,#040204,#050104,#050104,#060003,#090006,#0b010a,#0c020e,#0c0312)]
-    bg-scroll overflow-y-auto"
+    bg-scroll overflow-y-auto overflow-x-hidden"
       ref={mainRef}>
       <Navbar containerRef={mainRef}></Navbar>
-
       <IntroSection></IntroSection>
       <ToolsSection></ToolsSection>
       <ProjectSection></ProjectSection>

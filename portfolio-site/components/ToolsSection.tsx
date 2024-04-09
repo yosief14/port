@@ -3,7 +3,7 @@ import SectionTitle from "./SectionTitle";
 import { Magic } from "./Magic";
 
 export default function ToolsSection() {
-
+    //TODO add mobile view
     const codeContent =
         <>
             <Magic img={"/pixelArt/jsPixelArt.png"} iconTitle='JavaScript' ></Magic>
@@ -21,7 +21,7 @@ export default function ToolsSection() {
     </>
     //bg-[linear-gradient(to_right_bottom,#0a1114,#0a0e12,#0a0b0e,#08070a,#050405,#050305,#050104,#060003,#090006,#0b010a,#0c020e,#0c0312)]
     return (
-        <section id="projects" className="flex  bg-transparent flex-col items-center  justify-items-center py-16  gap-10  w-full">
+        <section id="projects" className="flex  bg-transparent flex-col items-center  justify-items-center py-16  gap-10 min-h-[85%]  w-full">
             <SectionTitle id="tools" title="Stuff I Use" />
 
             <Card title="<Code/>" children={codeContent} />
