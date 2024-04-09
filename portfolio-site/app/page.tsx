@@ -1,4 +1,5 @@
 "use client"
+import { DialogDemo } from "@/components/DialogueBox";
 import IntroSection from "@/components/about/IntroSection";
 import ToolsSection from "@/components/ToolsSection";
 import ProjectSection from "@/components/projects/ProjectSection";

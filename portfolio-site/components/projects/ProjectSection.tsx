@@ -6,9 +6,18 @@ export default function ProjectSection() {
     //TODO add mobile view
     //TODO add more projects
     return (
-        <motion.section className="flex flex-col  items-center gap-10  justify-items-center py-16 min-h-[85%] w-full" >
-            <SectionTitle id="projects" title="Stuff I've Done" />
-            <Carousel></Carousel>
-        </motion.section>
+        <div id='projects' className="flex flex-col gap-10 items-center min-h-[95%]">
+            <SectionTitle title="Stuff I've Done" />
+            <motion.section
+                id="projects"
+                className="flex flex-col  items-center gap-5 justify-items-center  w-full"
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+            >
+
+                <Carousel></Carousel>
+            </motion.section>
+        </div>
     )
 }

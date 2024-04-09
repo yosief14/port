@@ -36,7 +36,7 @@ export default function CarouselDemo() {
     }, [api])
 
     return (<>
-        <span className='font-pixel'>{current} of {count}</span>
+        <span className='font-pixel text-sm'>{current} of {count}</span>
         <Carousel setApi={setApi} className="w-full max-w-2xl ">
             <CarouselContent>
                 {projects.map((project, index) => (
