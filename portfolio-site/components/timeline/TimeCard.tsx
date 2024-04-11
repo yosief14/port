@@ -27,6 +27,11 @@ const colors = [
     "text-yellow-500",
     "text-purple-500",
     "text-orange-500",
+    "border-b-red-500",
+    "border-b-blue-500",
+    "border-b-yellow-500",
+    "border-b-purple-500",
+    "border-b-orange-500",
 ]
 
 

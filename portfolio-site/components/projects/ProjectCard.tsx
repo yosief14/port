@@ -17,10 +17,10 @@ import { SERVER_PROPS_GET_INIT_PROPS_CONFLICT } from 'next/dist/lib/constants';
 
 const toolsUsed =
     <>
-        <Magic size={1} img={"/pixelArt/jsPixelArt.png"} iconTitle='JavaScript' ></Magic>
-        <Magic size={1} img={"/pixelArt/cssPixelArt.png"} iconTitle="CSS"></Magic>
-        <Magic size={1} img={"/pixelArt/htmlPixelArt.png"} iconTitle='HTML' ></Magic>
-        <Magic size={1} img='/pixelArt/nextjs.svg' iconTitle='Next.js'></Magic>
+        <Magic size={"small"} img={"/pixelArt/jsPixelArt.png"} iconTitle='JavaScript' ></Magic>
+        <Magic size={"small"} img={"/pixelArt/cssPixelArt.png"} iconTitle="CSS"></Magic>
+        <Magic size={"small"} img={"/pixelArt/htmlPixelArt.png"} iconTitle='HTML' ></Magic>
+        <Magic size={"small"} img='/pixelArt/nextjs.svg' iconTitle='Next.js'></Magic>
     </>
 
 
@@ -31,12 +31,12 @@ export default function ProjectCard(props: ProjectCardProps) {
 
         <div
 
-            className='bg-black flex  px-6 py-2 flex-col gap-3 max-w-[500px] items-center  rounded-2xl border-2 border-[#27272a] '>
-            <div className=" relative w-[480px] h-[300px]">
+            className='bg-black flex  w-[290px] sm:w-fit sm:px-6 sm:py-2 flex-col sm:ap-3 sm:max-w-[500px] items-center  rounded-2xl border-2 border-[#27272a] '>
+            <div className=" relative w-[280px] h-[200px] sm:w-[480px] sm:h-[300px]">
                 <Image src={props.img} alt={"NO name badge"} fill className='rounded-2xl border-black border-2 object-cover'></Image>
             </div>
-            <h1 className='font-pixel text-xl font-bold'>{props.title}</h1>
-            <p className='font-pixel text-base text-gray-300 text-center w-[90%]'>{props.description}</p>
+            <h1 className='font-pixel text-base sm:text-xl font-bold'>{props.title}</h1>
+            <p className='font-pixel text-sm sm:text-base text-gray-300 text-center w-[90%]'>{props.description}</p>
             <div className='flex flex-row w-full justify-evenly mt-6'>
                 {toolsUsed}
             </div>

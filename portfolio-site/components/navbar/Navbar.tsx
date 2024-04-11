@@ -14,7 +14,7 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog"
 import { DialogPortal } from "@radix-ui/react-dialog"
-
+import { Separator } from "../ui/separator"
 const MenuTitle = () => {
     return (
         <div className='flex  px-3 sm:px-8 h-[80px] flex-row justify-center left-[30%] items-center absolute  bottom-[84.5%]'  >
@@ -98,7 +98,6 @@ export default function Navbar(props: NavbarProps) {
                                 <DialogFooter className=" right-4 relative">
                                     <div className=' flex-row flex relative items-center  group ' onClick={() => setOpen(false)} >
                                         <Image src="/pixelArt/fingerCursor.webp" alt={"NO name badge"} height={25} width={50} className='order-2 transform top-2 h-[25px] w-[50px] relative group-hover:opacity-100 group-hover:animate-point opacity-0 scale-x-[-1] sm:scale-x-100 sm:order-1 '></Image>
-                                        <button className='text-[#4A4D52] sm:order-1  group-hover:text-white'>Continue</button>
                                     </div>
                                 </DialogFooter>
                             </motion.div>
@@ -121,21 +120,32 @@ export default function Navbar(props: NavbarProps) {
                     />
                     <AnimatePresence>
                         {!collapsed &&
-                            <motion.div className="flex flex-row md:gap-4 origin-left mx-auto"
+                            <motion.div className="flex flex-row sm:gap-4 origin-left relative mx-auto"
                                 key="navBar"
                                 initial={{ x: -700, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1, transition: { duration: 0.3, delay: 0.1 } }}
                                 exit={{ x: -700, opacity: 0, transition: { duration: 0.3, delay: 0.1 } }}
                             >
-                                <a href="#about" className=" hover:bg-slate-800 px-4 py-1 rounded-md "
-                                >About</a>
-                                <a href="#projects" className=" hover:bg-slate-800 px-4 py-1 rounded-md">Projects</a>
-                                <a href="#timeline" className=" hover:bg-slate-800 px-4 py-1 rounded-md">Timeline</a>
+                                {links.map((link, index) => {
+                                    return (
+
+                                        <div className="hover:bg-slate-800 px-[1.5vw] py-1 text-[2.5vw] md:text-xl md:px-3 rounded-md underline cursor-pointer"
+                                            key={index}
+                                            onClick={() => {
+                                                document.getElementById(link)?.scrollIntoView({ behavior: 'smooth', block: 'end' })
+                                            }}
+                                        > {link.toUpperCase()}
+
+                                        </div>
+
+                                    )
+                                })}
                             </motion.div>
                         }
                     </AnimatePresence>
 
                     <motion.img src="/pixelArt/navi.png" alt="navi" className={`z-30 relative lg:absolute lg:top-7 lg:right-0 opacity-50 h-5 w-5 sm:h-7 sm:w-7 `}
+                        initial={{ x: -835 }}
                         animate={{ x: !collapsed ? 0 : -835, transition: { duration: 0.4, }, scale: 0.8 }}
                         whileHover={{ opacity: collapsed ? 1 : 0.8 }}
                         onClick={handlDialogOpen}

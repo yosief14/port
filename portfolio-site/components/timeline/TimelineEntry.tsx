@@ -1,9 +1,9 @@
 "use client"
+import { useEffect, useState } from 'react';
 import { TimelineElement } from '../../public/timelineAssets/timelineElements';
 import EntryIcon from './EntryIcon';
 import TimeCard from './TimeCard';
 import { motion } from "framer-motion";
-
 interface TimelineEntryProps {
     element: TimelineElement;
     delay: number;

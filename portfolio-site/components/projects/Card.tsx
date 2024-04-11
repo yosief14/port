@@ -7,8 +7,8 @@ interface CardProps {
 }
 export default function Card(props: CardProps) {
     return (
-        <article className='max-w-[700px] bg-black grid-cols-4 grid  p-6 rounded-2xl gap-4 justify-evenly border-2 border-[#27272a] '>
-            {props.title ? <h2 className='font-pixel text-3xl col-span-4 text-center'>{props.title}</h2> : null}
+        <article className='max-w-[700px] w-full  lg:min-w-[700px] bg-black grid-cols-4 grid  p-6 rounded-2xl gap-4 justify-evenly border-2 border-[#27272a] '>
+            {props.title ? <h2 className='font-pixel font-bold text-2xl sm:text-3xl col-span-4 text-center'>{props.title}</h2> : null}
             {props.children}
         </article >
     );

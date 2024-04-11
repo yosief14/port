@@ -37,7 +37,7 @@ export default function CarouselDemo() {
 
     return (<>
         <span className='font-pixel text-sm'>{current} of {count}</span>
-        <Carousel setApi={setApi} className="w-full max-w-2xl ">
+        <Carousel setApi={setApi} className="w-fit max-w-2xl ">
             <CarouselContent>
                 {projects.map((project, index) => (
                     <CarouselItem key={index} className='flex flex-col items-center'>

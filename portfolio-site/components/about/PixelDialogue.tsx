@@ -3,11 +3,34 @@ import { useEffect } from 'react';
 import { motion, useMotionValue, useTransform, usePresence, useAnimate } from 'framer-motion';
 
 
+
+const cursorVariants = {
+    blinking: {
+        opacity: [0, 0, 1, 1],
+        transition: {
+            duration: 1,
+            repeat: Infinity,
+            repeatDelay: 0,
+            ease: "linear",
+            times: [0, 0.5, 0.5, 1]
+        }
+    }
+};
+
+const CursorBlinker = () => {
+    return (
+        <motion.span
+            variants={cursorVariants}
+            animate="blinking"
+        >
+            _
+        </motion.span>
+    );
+}
 interface dialogueProps {
     text: string;
     delay: number;
 }
-
 
 export default function PixelDialogue(props: dialogueProps) {
     const [isPresent, safeToRemove] = usePresence();
@@ -49,30 +72,6 @@ export default function PixelDialogue(props: dialogueProps) {
         }
     }
 
-    const cursorVariants = {
-        blinking: {
-            opacity: [0, 0, 1, 1],
-            transition: {
-                duration: 1,
-                repeat: Infinity,
-                repeatDelay: 0,
-                ease: "linear",
-                times: [0, 0.5, 0.5, 1]
-            }
-        }
-    };
-
-    const CursorBlinker = () => {
-        return (
-            <motion.span
-                variants={cursorVariants}
-                animate="blinking"
-            >
-                _
-            </motion.span>
-        );
-    }
-
     return (
         <>
             <motion.span
@@ -81,8 +80,7 @@ export default function PixelDialogue(props: dialogueProps) {
             >
                 {displayText}
             </motion.span>
-            <CursorBlinker></CursorBlinker>
+            {/* <CursorBlinker></CursorBlinker> */}
         </>
     )
-
 }
