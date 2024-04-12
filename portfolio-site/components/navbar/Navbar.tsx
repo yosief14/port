@@ -96,9 +96,6 @@ export default function Navbar(props: NavbarProps) {
                                 </div>
 
                                 <DialogFooter className=" right-4 relative">
-                                    <div className=' flex-row flex relative items-center  group ' onClick={() => setOpen(false)} >
-                                        <Image src="/pixelArt/fingerCursor.webp" alt={"NO name badge"} height={25} width={50} className='order-2 transform top-2 h-[25px] w-[50px] relative group-hover:opacity-100 group-hover:animate-point opacity-0 scale-x-[-1] sm:scale-x-100 sm:order-1 '></Image>
-                                    </div>
                                 </DialogFooter>
                             </motion.div>
                         </DialogContent>
