@@ -4,7 +4,6 @@ import { Magic } from "./Magic";
 import { motion } from "framer-motion"
 
 export default function ToolsSection() {
-    //TODO add mobile view
     const codeContent =
         <>
             <Magic img={"/pixelArt/jsPixelArt.png"} iconTitle='JavaScript' ></Magic>
@@ -20,6 +19,7 @@ export default function ToolsSection() {
         <Magic img={"/pixelArt/LlamaIndex.png"} iconTitle='Llama' ></Magic>
 
     </>
+    //TODO add mobile view
     //bg-[linear-gradient(to_right_bottom,#0a1114,#0a0e12,#0a0b0e,#08070a,#050405,#050305,#050104,#060003,#090006,#0b010a,#0c020e,#0c0312)]
     return (
 
@@ -33,8 +33,12 @@ export default function ToolsSection() {
 
             >
 
-                <Card title="<Code/>" children={codeContent} />
-                <Card title="<Tools/>" children={toolsContent} />
+                <Card title="<Code/>">
+                    {codeContent}
+                </Card>
+                <Card title="<Tools/>"  >
+                    {toolsContent}
+                </Card>
             </motion.section>
         </div>
 

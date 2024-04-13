@@ -61,7 +61,6 @@ export default function Navbar(props: NavbarProps) {
         }
 
     }
-
     return (
         <>
             <AnimatePresence>
