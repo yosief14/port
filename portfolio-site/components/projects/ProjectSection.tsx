@@ -6,7 +6,7 @@ export default function ProjectSection() {
     //TODO add mobile view
     //TODO add more projects
     return (
-        <div id='projects' className="flex  flex-col gap-10  items-center min-h[500px] sm:h-fit">
+        <div id='projects' className="flex  flex-col gap-10  sm:mb-40 items-center min-h[500px] sm:h-fit">
             <SectionTitle title="Stuff I've Done" />
             <motion.section
                 className="flex flex-col  items-center gap-5 w-full"

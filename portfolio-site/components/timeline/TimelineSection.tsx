@@ -3,7 +3,7 @@ import Timeline from "./Timeline"
 export default function TimelineSection() {
     //TODO add mobile view
     return (
-        <section className="flex-col items-center flex  w-full min-h-[500px] sm:h-[95%] relative gap-10 ">
+        <section className="flex-col items-center flex  w-full min-h-[500px] sm:h-[95%] relative gap-10 sm:gap-20 ">
 
             <SectionTitle id="timeline" title="Timeline" />
             <Timeline />

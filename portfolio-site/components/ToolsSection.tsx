@@ -23,7 +23,7 @@ export default function ToolsSection() {
     //bg-[linear-gradient(to_right_bottom,#0a1114,#0a0e12,#0a0b0e,#08070a,#050405,#050305,#050104,#060003,#090006,#0b010a,#0c020e,#0c0312)]
     return (
 
-        <div id="tools" className="flex flex-col sm:my-0  items-center sm:h-[95%] min-h[500px] gap-10">
+        <div id="tools" className="flex flex-col sm:mb-40  items-center sm:h-[95%] min-h[500px] gap-10">
             <SectionTitle title="Stuff I Use" />
             <motion.section className="flex  bg-transparent flex-col items-center  gap-5   w-full"
                 initial={{ opacity: 0, x: -100 }}
