@@ -16,7 +16,6 @@ export default function ChatBox(props: ChatBoxProps) {
     let boxLoadDelay = 0.5;
 
     const updateScene = (newValue: number) => {
-        console.log(newValue)
         if ((newValue >= 0 && newValue < text.length)) {
             setScene(newValue)
         }
