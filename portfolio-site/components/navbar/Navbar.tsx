@@ -1,20 +1,17 @@
 "use client"
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValueEvent } from "framer-motion"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
     DialogFooter,
     DialogHeader,
-    DialogOverlay,
     DialogTitle,
 } from "@/components/ui/dialog"
 import { DialogPortal } from "@radix-ui/react-dialog"
-import { Separator } from "../ui/separator"
 const MenuTitle = () => {
     return (
         <div className='flex  px-3 sm:px-8 h-[80px] flex-row justify-center left-[30%] items-center absolute  bottom-[84.5%]'  >
@@ -29,20 +26,19 @@ const MenuTitle = () => {
 interface NavbarProps {
     containerRef: React.MutableRefObject<null>
 }
-const MotionContainer = (<motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-></motion.div>)
 
+console.log("Navbar.tsx")
 const links = ['about', 'projects', 'tools', 'timeline', 'contact'];
 
 export default function Navbar(props: NavbarProps) {
     const [open, setOpen] = useState(false)
     const [collapsed, setCollapsed] = useState(false)
     const { scrollYProgress } = useScroll(
-        { container: props.containerRef }
+        {
+            layoutEffect: false,
+            container: props.containerRef
+        }
     )
-
 
     useMotionValueEvent(scrollYProgress, "change", (value) => {
         if (value > 0.01 &&
