@@ -1,5 +1,6 @@
 "use client"
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValueEvent } from "framer-motion"
+import ContactSheet from "@/components/contact/ContactSheet"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
@@ -12,7 +13,7 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog"
 import { DialogPortal } from "@radix-ui/react-dialog"
-const MenuTitle = () => {
+export const MenuTitle = () => {
     return (
         <div className='flex  px-3 sm:px-8 h-[80px] flex-row justify-center left-[30%] items-center absolute  bottom-[84.5%]'  >
             {/* For SVG's to scale the viewbox attribute must be set for it to be scalable*/}
@@ -28,10 +29,11 @@ interface NavbarProps {
 }
 
 console.log("Navbar.tsx")
-const links = ['about', 'projects', 'tools', 'timeline', 'contact'];
+const links = ['about', 'tools', 'projects', 'timeline'];
 
 export default function Navbar(props: NavbarProps) {
     const [open, setOpen] = useState(false)
+    const [contactOpen, setContactOpen] = useState(false)
     const [collapsed, setCollapsed] = useState(false)
     const { scrollYProgress } = useScroll(
         {
@@ -61,10 +63,12 @@ export default function Navbar(props: NavbarProps) {
         <>
             <AnimatePresence>
 
+                <ContactSheet setOpen={setContactOpen} open={contactOpen} />
                 <Dialog open={open} onOpenChange={setOpen} >
                     <DialogPortal >
                         <DialogContent className="sm:max-w-[425px] bg-black font-pixel">
                             <motion.div
+                                key="dialog"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                             >
@@ -76,15 +80,20 @@ export default function Navbar(props: NavbarProps) {
                                 <div className="grid grid-cols-1 items-center gap-4 w-28 relative mt-7" >
                                     {links.map((link, index) => {
                                         return (
-                                            <div className=" hover:bg-slate-800 px-4 py-1 rounded-md"
+                                            <a className=" hover:bg-slate-800 px-4 py-1 rounded-md"
                                                 key={index}
                                                 onClick={() => {
-                                                    document.getElementById(link)?.scrollIntoView({ behavior: 'smooth' })
+                                                    const scrollEnd = link === 'timeline' ? 'start' : 'center'
+                                                    document.getElementById(link)?.scrollIntoView({ behavior: 'smooth', block: scrollEnd })
                                                     setOpen(false)
                                                 }}
-                                            >{link.toUpperCase()}</div>
+                                            >{link.toUpperCase()}</a>
                                         )
                                     })}
+                                    <Link href='mailto:yosief14@gmail.com' className=" hover:bg-slate-800 px-4 text-base py-1 rounded-md" onClick={() => {
+                                        // setOpen(false)
+                                        // setContactOpen(true)
+                                    }}>Contact</Link>
                                 </div>
                                 <div className=" items-center gap-4">
 
@@ -100,7 +109,7 @@ export default function Navbar(props: NavbarProps) {
 
             <motion.div
                 className={`w-full lg:top-[5%] z-10 fixed lg:fixed lg:flex lg:justify-center bg-[#210b24] lg:bg-transparent `}
-                key="text"
+                key="text-mobile"
             >
                 <motion.div className="  py-3 font-pixel text-base flex flex-row items-center justify-between md:py-0 md:gap-9 md:justify-center lg:justify-start relative   overflow-hidden sm:text-2xl lg:w-[900px] "
                     animate={{ x: !collapsed ? 0 : -80, transition: { duration: 0.2 } }}
@@ -121,17 +130,23 @@ export default function Navbar(props: NavbarProps) {
                                 {links.map((link, index) => {
                                     return (
 
-                                        <div className="hover:bg-slate-800 px-[1.5vw] py-1 text-[2.5vw] md:text-xl md:px-3 rounded-md underline cursor-pointer"
+                                        <a className="hover:bg-slate-800 px-[1.5vw] py-1  text-[2.5vw] md:text-xl md:px-3 rounded-md cursor-pointer"
                                             key={index}
                                             onClick={() => {
-                                                document.getElementById(link)?.scrollIntoView({ behavior: 'smooth', block: 'end' })
+                                                const scrollEnd = link === 'timeline' ? 'start' : 'center'
+                                                document.getElementById(link)?.scrollIntoView({ behavior: 'smooth', block: scrollEnd })
                                             }}
                                         > {link.toUpperCase()}
 
-                                        </div>
+                                        </a>
 
                                     )
                                 })}
+
+                                <Link href='mailto:yosief14@gmail.com' className="hover:bg-slate-800 px-[1.5vw] py-1  text-[2.5vw] md:text-xl md:px-3 rounded-md cursor-pointer" onClick={() => {
+                                    // setOpen(false)
+                                    // setContactOpen(true)
+                                }}>CONCTACT</Link>
                             </motion.div>
                         }
                     </AnimatePresence>

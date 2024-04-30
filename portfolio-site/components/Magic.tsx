@@ -28,7 +28,7 @@ export const Magic: React.FC<MagicProps> = (props: MagicProps) => {
 
     return (
         <div className={`flex flex-col {${props.className} group  items-center gap-2 `}>
-            <span className={` text-sm relative md:text-xl font-pixel group-hover:animate-float text-center `}>{props.iconTitle}</span>
+            <span className={` text-sm relative md:text-lg font-pixel group-hover:animate-float text-center `}>{props.iconTitle}</span>
             <div className={`${defaultSize} lg:size-14 relative items-center group space-y-8`}>
 
 
