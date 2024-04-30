@@ -93,7 +93,7 @@ export default function Navbar(props: NavbarProps) {
                                     <Link href='mailto:yosief14@gmail.com' className=" hover:bg-slate-800 px-4 text-base py-1 rounded-md" onClick={() => {
                                         // setOpen(false)
                                         // setContactOpen(true)
-                                    }}>Contact</Link>
+                                    }}>CONTACT</Link>
                                 </div>
                                 <div className=" items-center gap-4">
 
