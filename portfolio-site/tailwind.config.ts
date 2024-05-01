@@ -1,3 +1,4 @@
+import * as tailwindcssAnimate from 'tailwindcss-animate'
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -36,6 +37,6 @@ const config: Config = {
       animation: ['hover', 'focus', 'group-hover'],
     },
   },
-  plugins: [],
+  plugins: [tailwindcssAnimate],
 };
 export default config;

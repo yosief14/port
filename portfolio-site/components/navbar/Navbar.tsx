@@ -13,9 +13,9 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog"
 import { DialogPortal } from "@radix-ui/react-dialog"
-export const MenuTitle = () => {
+export const MenuTitle = ({ className = '' }: { className: string }) => {
     return (
-        <div className='flex  px-3 sm:px-8 h-[80px] flex-row justify-center left-[30%] items-center absolute  bottom-[84.5%]'  >
+        <div className={`flex  px-3 sm:px-8 ${className} h-[80px] flex-row justify-center left-[30%] items-center absolute  bottom-[86.5%]`}>
             {/* For SVG's to scale the viewbox attribute must be set for it to be scalable*/}
             <Image src="/Vector 1.svg" alt={"NO name badge"} width={300} height={200} className='absolute'></Image>
             <p className='font-pixel text-lg sm:text-2xl relative' >
@@ -63,8 +63,8 @@ export default function Navbar(props: NavbarProps) {
         <>
             <AnimatePresence>
 
-                <ContactSheet setOpen={setContactOpen} open={contactOpen} />
-                <Dialog open={open} onOpenChange={setOpen} >
+                <ContactSheet setOpen={setContactOpen} open={contactOpen} showModels={setOpen} />
+                <Dialog key='PauseDia' open={open} onOpenChange={setOpen} >
                     <DialogPortal >
                         <DialogContent className="sm:max-w-[425px] bg-black font-pixel">
                             <motion.div
@@ -73,7 +73,7 @@ export default function Navbar(props: NavbarProps) {
                                 animate={{ opacity: 1 }}
                             >
                                 <DialogHeader>
-                                    <DialogTitle><MenuTitle></MenuTitle></DialogTitle>
+                                    <DialogTitle><MenuTitle className=""></MenuTitle></DialogTitle>
 
                                 </DialogHeader>
 
@@ -90,10 +90,9 @@ export default function Navbar(props: NavbarProps) {
                                             >{link.toUpperCase()}</a>
                                         )
                                     })}
-                                    <Link href='mailto:yosief14@gmail.com' className=" hover:bg-slate-800 px-4 text-base py-1 rounded-md" onClick={() => {
-                                        // setOpen(false)
-                                        // setContactOpen(true)
-                                    }}>CONTACT</Link>
+                                    <Button className=" hover:bg-slate-800 px-4 text-base py-1 rounded-md" onClick={() => {
+                                        setContactOpen(true)
+                                    }}>CONTACT</Button>
                                 </div>
                                 <div className=" items-center gap-4">
 
@@ -121,7 +120,7 @@ export default function Navbar(props: NavbarProps) {
                     />
                     <AnimatePresence>
                         {!collapsed &&
-                            <motion.div className="flex flex-row sm:gap-4 origin-left relative mx-auto"
+                            <motion.div className="flex flex-row sm:gap-4 origin-left relative  items-center mx-auto"
                                 key="navBar"
                                 initial={{ x: -700, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1, transition: { duration: 0.3, delay: 0.1 } }}
@@ -143,10 +142,10 @@ export default function Navbar(props: NavbarProps) {
                                     )
                                 })}
 
-                                <Link href='mailto:yosief14@gmail.com' className="hover:bg-slate-800 px-[1.5vw] py-1  text-[2.5vw] md:text-xl md:px-3 rounded-md cursor-pointer" onClick={() => {
-                                    // setOpen(false)
-                                    // setContactOpen(true)
-                                }}>CONCTACT</Link>
+                                <Button className="hover:bg-slate-800 px-[1.5vw] py-1  text-[2.5vw] md:text-xl md:px-3 rounded-md cursor-pointer" onClick={() => {
+                                    setOpen(false)
+                                    setContactOpen(true)
+                                }}>CONCTACT</Button>
                             </motion.div>
                         }
                     </AnimatePresence>

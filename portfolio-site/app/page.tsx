@@ -5,6 +5,7 @@ import ProjectSection from "@/components/projects/ProjectSection";
 import TimelineSection from "@/components/timeline/TimelineSection";
 import Navbar from "@/components/navbar/Navbar";
 import React from "react";
+import { Toaster } from "@/components/ui/toaster";
 
 export default function Home() {
   //TODO: add contact section

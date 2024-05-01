@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/carousel"
 import { title } from 'process';
 
-const projects = [{ title: "DevQuest", descriptions: "Job Tracking application to help me track my job applications", img: "/dev-quest.jpg", liveLink: "https://dev-quest-seven.vercel.app/Home", githubLink: "https://github.com/yosief14/dev-quest" },
+const projects = [{ title: "DevQuest", descriptions: "Job Tracking application to help me track my job applications", img: "/dev-quest.jpg", liveLink: "https://dev-quest-seven.vercel.app/", githubLink: "https://github.com/yosief14/dev-quest" },
 { title: "Yummarizer", descriptions: "CLI tool to extract and summarize cooking videos", img: "/projectAssets/YummarizerLogo.png", liveLink: "", githubLink: "https://github.com/yosief14/yummarizer-cli" },
 { title: "Yosief's Portfolio", descriptions: "My personal portfolio website", img: "/projectAssets/portfolio.png", githubLink: "https://github.com/yosief14/port", liveLink: "https://yosiefgebremedhin.com/" }
 ]

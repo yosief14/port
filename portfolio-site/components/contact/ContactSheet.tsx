@@ -1,33 +1,29 @@
 'use client'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { motion } from 'framer-motion'
 import ContactForm from "./ContactForm"
-import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogPortal, DialogTitle } from "../ui/dialog"
+import { Dialog, DialogContent, DialogFooter, DialogPortal } from "../ui/dialog"
 import { MenuTitle } from "../navbar/Navbar"
-export default function ContactSheet({ setOpen, open }: { setOpen: React.Dispatch<React.SetStateAction<boolean>>, open: boolean }) {
+export default function ContactSheet({ showModels, setOpen, open }: { setOpen: React.Dispatch<React.SetStateAction<boolean>>, open: boolean, showModels: React.Dispatch<React.SetStateAction<boolean>> }) {
     return (
-        <Dialog open={open} onOpenChange={setOpen} >
+        <Dialog key="contactDialogue" open={open} onOpenChange={setOpen} >
             <DialogPortal >
                 <DialogContent className="sm:max-w-[425px] bg-black font-pixel">
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                     >
+                        <MenuTitle className={'bottom-[91.8%]'}></MenuTitle>
                         <ContactForm />
-                        <DialogHeader>
-                            <DialogTitle><MenuTitle></MenuTitle></DialogTitle>
 
-                        </DialogHeader>
+                        <div className="flex flex-row justify-between relative mt-16   text-lg">
+                            <button className="hover:opacity-100 opacity-70" onClick={() => setOpen(!open)}>RETURN</button>
 
-                        <div className="grid grid-cols-1 items-center gap-4 w-28 relative mt-7" >
+                            <button className="opacity-70 hover:opacity-100" onClick={() => {
+                                setOpen(false)
+                                showModels(false)
+                            }}>CLOSE</button>
 
                         </div>
-                        <div className=" items-center gap-4">
-
-                        </div>
-                        <button onClick={() => setOpen(!open)}></button>
                         <DialogFooter className=" right-4 relative">
                         </DialogFooter>
                     </motion.div>

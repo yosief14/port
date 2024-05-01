@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { inter, pixelify } from "./fonts";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Yosief Gebremedhin",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${pixelify.variable}`}>
-      <body >{children}</body>
+      <body >{children}
+
+        <Toaster></Toaster>
+      </body>
     </html>
   );
 }

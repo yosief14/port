@@ -61,7 +61,7 @@ export default function ChatBox(props: ChatBoxProps) {
                         Yosief
                     </p>
                 </div>
-                <div className='overflow-hidden flex absolute border-b-2 left-[50%] top-[55%] h-[250px] w-[250px] sm:h-[340px] sm:w-[340px] sm:sm:relative sm:top-[-41px] sm:left-[1px]'>
+                <div className='overflow-hidden flex absolute border-b-[2px] left-[50%] top-[55%] h-[250px] w-[250px] sm:h-[340px] sm:w-[340px] sm:sm:relative sm:top-[-42px] sm:left-[1px]'>
 
                     <AnimatePresence initial={false}>
                         <motion.img
