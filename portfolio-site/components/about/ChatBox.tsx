@@ -12,7 +12,7 @@ export default function ChatBox(props: ChatBoxProps) {
 
     const [scene, setScene] = useState(0);
     const profileImage = ["/pixelArt/Profile.png", "/pixelArt/pixelArt.png"]
-    const text = ["Hi there!\u2028\n I'm Yosief , \ra Full Stack Developer,\rcurry enjoyer, \rand if you couldn't tell I have a healthy appreciation for video games.\r\nBefore we continue let me slip into something less comfertable.\n", "GOD this thing ITCHES\u2028\n\nAs you can tell by the magical amount of fingers on my hand, I like using generative ai tools.\r\nJust......\rdont stare too long. "]
+    const text = ["Hi there!\u2028\n I'm Yosief , \ra Full Stack Developer,\rcurry enjoyer, \rand if you couldn't tell I have a healthy appreciation for video games.\r\nBefore we continue let me slip into something less comfortable.\n", "GOD this thing ITCHES\u2028\n\nAs you can tell by the magical amount of fingers on my hand, I like using generative ai tools.\r\nJust......\rdont stare too long. "]
     let boxLoadDelay = 0.5;
 
     const updateScene = (newValue: number) => {
