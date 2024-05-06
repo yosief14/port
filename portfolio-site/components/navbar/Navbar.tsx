@@ -145,7 +145,7 @@ export default function Navbar(props: NavbarProps) {
                                 <Button className="hover:bg-slate-800 px-[1.5vw] py-1  text-[2.5vw] md:text-xl md:px-3 rounded-md cursor-pointer" onClick={() => {
                                     setOpen(false)
                                     setContactOpen(true)
-                                }}>CONCTACT</Button>
+                                }}>CONTACT</Button>
                             </motion.div>
                         }
                     </AnimatePresence>
