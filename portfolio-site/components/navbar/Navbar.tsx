@@ -28,7 +28,6 @@ interface NavbarProps {
     containerRef: React.MutableRefObject<null>
 }
 
-console.log("Navbar.tsx")
 const links = ['about', 'tools', 'projects', 'timeline'];
 
 export default function Navbar(props: NavbarProps) {

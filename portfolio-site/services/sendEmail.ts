@@ -15,8 +15,6 @@ const mg = mailgun.client({
 })
 
 export async function sendEmail(data: { name: string, email: string, message: string }) {
-    console.log(data)
-    console.log(CONTACT_FORM_TO_EMAIL)
     const result = await mg.messages.create(MAILGUN_DOMAIN, {
         from: CONTACT_FORM_FROM_EMAIL,
         to: CONTACT_FORM_TO_EMAIL,
