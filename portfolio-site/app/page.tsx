@@ -6,6 +6,7 @@ import TimelineSection from "@/components/timeline/TimelineSection";
 import Navbar from "@/components/navbar/Navbar";
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
+import LinkSection from "@/components/links/LinkSection";
 
 export default function Home() {
   //TODO: add contact section
@@ -22,6 +23,7 @@ export default function Home() {
       <ToolsSection></ToolsSection>
       <ProjectSection></ProjectSection>
       <TimelineSection></TimelineSection>
+      <LinkSection />
     </main>
 
   );

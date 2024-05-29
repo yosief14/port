@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export interface MagicProps {
     img?: string;
-    iconTitle: string;
+    iconTitle?: string;
     className?: string;
     sparkles?: string;
     size?: string;

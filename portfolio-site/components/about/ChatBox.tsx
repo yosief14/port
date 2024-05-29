@@ -22,7 +22,7 @@ export default function ChatBox(props: ChatBoxProps) {
     }
 
     return (
-        <div className={`${props.className} relaitve flex h-full justify-center w-full items-center`} >
+        <div className={`${props.className} relative flex h-full justify-center w-full items-center`} >
 
             <motion.div className='bg-black  flex flex-col relative min-h-[300px]  h-fit  border-2 border-[#4A4D52] w-[95%] sm:flex-row  sm:w-11/12 lg:w-[900px] sm:h-[300px]'
                 initial={{ scaleY: 0 }}
