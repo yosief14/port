@@ -39,7 +39,7 @@ const timelineElements: TimelineElement[] = [
     },
     {
         id: 3,
-        title: "Full-Stack Software Engineer",
+        title: "Associate Software Engineer",
         company: "Carat",
         location: "Fort Collins, Colorado",
         description: "Created new and refactored old UI components with React.js and Next.js, as well as optimizing api calls in Express.js.",
@@ -47,6 +47,18 @@ const timelineElements: TimelineElement[] = [
         date: "2023-2024",
         icon: "work",
         color: "yellow",
+        tech: ["React", "HTML", "CSS", "JavaScript"],
+    },
+    {
+        id: 4,
+        title: "Full-Stack Software Engineer",
+        company: "Foureyes",
+        location: "Fort Collins, Colorado",
+        description: "Full-stack engineer using generative AI tools to build data pipeline applications on cloud-native platforms to capture and display user data for thousands of car dealerships industry-wide",
+        buttonText: "Details",
+        date: "2023-2024",
+        icon: "work",
+        color: "blue",
         tech: ["React", "HTML", "CSS", "JavaScript"],
     },
 
