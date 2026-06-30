@@ -26,6 +26,7 @@ const projects = [
 		descriptions:
 			"Web-app for League of Legends streamers to create and share matchup guides with Patreon subscribers",
 		img: "/projectAssets/trial-by-fire.png",
+		githubLink: "https://github.com/yosief14/trial-by-fire",
 		liveLink: "https://trialbyfire.vercel.app/",
 	},
 	{
