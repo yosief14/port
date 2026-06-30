@@ -58,7 +58,7 @@ const timelineElements: TimelineElement[] = [
         buttonText: "Details",
         date: "2024-2026",
         icon: "work",
-        color: "blue",
+        color: "orange",
         tech: ["React", "HTML", "CSS", "JavaScript"],
     },
 
