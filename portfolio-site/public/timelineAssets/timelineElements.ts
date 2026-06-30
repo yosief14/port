@@ -56,7 +56,7 @@ const timelineElements: TimelineElement[] = [
         location: "Fort Collins, Colorado",
         description: "Full-stack engineer using generative AI tools to build data pipeline applications on cloud-native platforms to capture and display user data for thousands of car dealerships industry-wide",
         buttonText: "Details",
-        date: "2023-2024",
+        date: "2024-2026",
         icon: "work",
         color: "blue",
         tech: ["React", "HTML", "CSS", "JavaScript"],
